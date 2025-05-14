@@ -1,7 +1,13 @@
-
-<%= simple_form_for [@category, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :recipe %>
-  <%= f.submit "New Bookmark", class: "btn btn-primary" %>
-<% end %>
-<%= link_to "back", category_path(@category) %>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="form-new m-3">
+    <h1>Add a New Recipe to <%= @category.name %> </h1>
+    <%= simple_form_for [@category, @bookmark] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :recipe %>
+    <div div class="d-flex justify-content-between align-items-end">
+      <%= f.submit "New Bookmark", class: "btn btn-warning" %>
+      <% end %>
+      <%= link_to "back", category_path(@category), class: "form-back-button" %>
+    </div>
+  </div>
+</div>
